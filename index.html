@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>克苏鲁的呼唤 7e · 追逐面板</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4 27.8 18.2 42 22 27.8 25.8 24 40 20.2 25.8 6 22 20.2 18.2Z' fill='none' stroke='%23d3b26a' stroke-width='2'/%3E%3Ccircle cx='24' cy='22' r='4' fill='none' stroke='%23d3b26a' stroke-width='1.6'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="sigil" aria-hidden="true">
+      <svg viewBox="0 0 48 48">
+        <path d="M24 4 27.8 18.2 42 22 27.8 25.8 24 40 20.2 25.8 6 22 20.2 18.2Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="24" cy="22" r="4.4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="24" cy="22" r="4" fill="currentColor" opacity=".25"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <h1>追逐面板</h1>
+      <p>克苏鲁的呼唤 第七版 · 第七章 P111–127</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button class="tab is-active" data-view="library">角色卡库</button>
+    <button class="tab" data-view="chase">追逐</button>
+    <button class="tab" data-view="refs">规则速查</button>
+    <button class="tab" data-view="log">日志</button>
+  </nav>
+  <div class="top-tools">
+    <label class="inline-field">掷骰
+      <select id="diceMode">
+        <option value="auto">自动掷骰</option>
+        <option value="manual">手动录入</option>
+      </select>
+    </label>
+    <button class="btn tiny" id="btnImport">导入 JSON</button>
+    <button class="btn tiny" id="btnExport">导出 JSON</button>
+    <button class="btn tiny danger" id="btnReset">清空本地</button>
+    <input id="fileImport" type="file" accept=".json,application/json" hidden />
+  </div>
+</header>
+
+<main class="main">
+  <section class="view is-active" id="view-library"></section>
+  <section class="view" id="view-chase"></section>
+  <section class="view" id="view-refs"></section>
+  <section class="view" id="view-log"></section>
+</main>
+
+<div class="modal-root" id="modalRoot" hidden></div>
+<div class="toast" id="toast" hidden></div>
+<noscript><p class="noscript">此工具需要启用 JavaScript。</p></noscript>
+
+<script src="js/tables.js"></script>
+<script src="js/dice.js"></script>
+<script src="js/store.js"></script>
+<script src="js/chase.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
